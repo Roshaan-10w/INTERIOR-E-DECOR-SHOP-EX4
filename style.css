@@ -1,0 +1,735 @@
+
+/* =========================================
+   INTERIOR E-DECOR SHOP
+   EX4 - WEBPAGE DESIGN USING ADVANCED CSS3
+   ========================================= */
+
+/* 1. GLOBAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #151515;
+    --dark: #202020;
+    --gold: #c9a45c;
+    --light-gold: #e8d4a3;
+    --white: #ffffff;
+    --cream: #f8f5ef;
+    --gray: #777777;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+
+/* =========================================
+   2. HEADER AND NAVIGATION
+   ========================================= */
+
+.header {
+    width: 100%;
+    min-height: 76px;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background-color: var(--black);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--gold);
+}
+
+.logo,
+.footer-logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--gold);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    font-size: 14px;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   3. HERO SECTION
+   EX4: MULTIPLE BACKGROUNDS
+   EX4: BACKGROUND SIZE
+   ========================================= */
+
+.hero {
+    min-height: 590px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+
+    background-color: var(--dark);
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(15, 15, 15, 0.94) 0%,
+            rgba(15, 15, 15, 0.75) 45%,
+            rgba(15, 15, 15, 0.15) 100%
+        ),
+        url("images/living-room.jpeg");
+
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.subtitle {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    max-width: 520px;
+    color: #eeeeee;
+    margin-bottom: 32px;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   4. BUTTONS
+   ========================================= */
+
+.btn {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--black);
+    border: 2px solid var(--gold);
+    border-radius: 5px;
+    padding: 13px 28px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--gold);
+}
+
+.btn:focus-visible,
+.product-btn:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   5. GENERAL SECTIONS
+   ========================================= */
+
+.section {
+    padding: 85px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+    color: var(--gray);
+}
+
+
+/* =========================================
+   6. CATEGORY CARDS
+   EX4: ROUNDED CORNERS
+   ========================================= */
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.category-card {
+    background-color: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e5dfd3;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.category-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-info {
+    padding: 20px;
+    position: relative;
+    background-color: var(--white);
+}
+
+.category-info h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.category-info p {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+
+/* =========================================
+   7. FEATURED PRODUCTS
+   EX4: ROUNDED PRODUCT CARDS
+   EX4: DECORATIVE GOLD BORDER
+   ========================================= */
+
+.products-section {
+    background-color: var(--cream);
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid transparent;
+
+    /* EX4: BORDER IMAGE */
+    border-image-source: linear-gradient(
+        135deg,
+        #8f6b2e,
+        #f5e3a8,
+        #b58a3c,
+        #f5e3a8
+    );
+
+    border-image-slice: 1;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 22px 18px;
+}
+
+.product-category {
+    color: #9b7838;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.price {
+    color: #99732f;
+    font-size: 21px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.product-btn {
+    display: inline-block;
+    padding: 9px 17px;
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.product-btn:hover {
+    background-color: var(--gold);
+}
+
+
+/* =========================================
+   8. ADJACENT SIBLING SELECTOR (+)
+   EX4: HOVER TO REVEAL PRODUCT IMAGE
+   ========================================= */
+
+.hover-demo {
+    background-color: var(--white);
+}
+
+.hover-list {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.hover-item {
+    margin-bottom: 18px;
+    padding: 20px;
+    background-color: var(--cream);
+    border-radius: 12px;
+    border: 1px solid #e7ddc9;
+}
+
+/* Product name */
+.itemName {
+    color: var(--black);
+    font-size: 19px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Image is faded by default */
+.itemImg {
+    max-height: 0;
+    opacity: 0.2;
+    overflow: hidden;
+    margin-top: 0;
+    transition:
+        opacity 0.4s ease,
+        max-height 0.5s ease,
+        margin-top 0.4s ease;
+}
+
+/* EX4: Adjacent sibling combinator (+)
+   Reveal the image immediately after the name */
+
+.itemName:hover + .itemImg,
+.itemName:focus + .itemImg {
+    opacity: 1;
+    max-height: 350px;
+    margin-top: 18px;
+}
+
+/* The parent also responds when the name is hovered */
+.hover-item:has(.itemName:hover) {
+    border-color: var(--gold);
+}
+
+.itemImg img {
+    width: 100%;
+    max-width: 420px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   9. PRODUCT PRICE TABLE
+   EX4: NTH-CHILD ODD / EVEN
+   ========================================= */
+
+.price-section {
+    background-color: var(--cream);
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#priceTable {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: var(--white);
+    border: 2px solid var(--gold);
+}
+
+#priceTable th,
+#priceTable td {
+    border: 1px solid #d8c79e;
+    padding: 16px 20px;
+    text-align: left;
+}
+
+#priceTable th {
+    background-color: var(--black);
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* EX4: Odd rows */
+#priceTable tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+/* EX4: Even rows */
+#priceTable tbody tr:nth-child(even) {
+    background-color: #e8dfcb;
+}
+
+/* EX4: Change the row color on hover */
+#priceTable tbody tr:hover {
+    background-color: #f2d58a;
+    transition: background-color 0.3s ease;
+}
+
+
+/* =========================================
+   10. ABOUT US
+   ========================================= */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+    padding: 85px 8%;
+    background-color: var(--white);
+}
+
+.about-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 5px solid var(--gold);
+}
+
+.about-content h2 {
+    font-size: clamp(27px, 3vw, 39px);
+    line-height: 1.3;
+    margin-bottom: 22px;
+}
+
+.about-content p:not(.subtitle) {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+.about-content .btn {
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   11. CONTACT FORM
+   EX4: FOCUS / REQUIRED / VALID / INVALID
+   ========================================= */
+
+.contact-section {
+    background-color: var(--cream);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+
+    background-color: var(--white);
+    border-radius: 18px;
+
+    /* EX4: BORDER IMAGE */
+    border: 8px solid transparent;
+    border-image: linear-gradient(
+        135deg,
+        #a17a32,
+        #f4dfa0,
+        #b38a3e
+    ) 1;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Input base styles */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 2px solid #d7d1c5;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: var(--black);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+/* EX4: REQUIRED pseudo-class */
+.form-group input:required,
+.form-group select:required {
+    background-color: #fffdf4;
+}
+
+/* EX4: FOCUS pseudo-class */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border: 2px solid #c9a45c;
+    background-color: #fffdf4;
+    box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.18);
+}
+
+/* EX4: VALID pseudo-class */
+.form-group input:required:valid,
+.form-group select:required:valid {
+    border-color: #318451;
+}
+
+/* EX4: INVALID pseudo-class */
+.form-group input:required:invalid,
+.form-group select:required:invalid {
+    border-color: #c44747;
+}
+
+/* Optional phone input should not look invalid when empty */
+.form-group input[type="tel"]:invalid:not(:placeholder-shown) {
+    border-color: #c44747;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   12. FOOTER
+   ========================================= */
+
+.footer {
+    padding: 45px 7%;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    border-top: 3px solid var(--gold);
+}
+
+.footer-logo {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.copyright {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444444;
+}
+
+
+/* =========================================
+   13. RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .header {
+        flex-direction: column;
+        padding: 18px 5%;
+    }
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .category-container,
+    .product-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .about-section {
+        gap: 30px;
+        padding: 65px 5%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        position: relative;
+    }
+
+    .navbar {
+        gap: 10px 16px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 55px 6%;
+        background-position: center, center;
+    }
+
+    .section {
+        padding: 55px 5%;
+    }
+
+    .category-container,
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card img,
+    .product-card img {
+        height: 250px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        padding: 55px 6%;
+    }
+
+    .about-image img {
+        height: 280px;
+    }
+
+    .contact-form {
+        padding: 22px 16px;
+    }
+
+    #priceTable th,
+    #priceTable td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .itemImg img {
+        height: 210px;
+    }
+}
